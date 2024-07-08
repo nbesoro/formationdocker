@@ -1,0 +1,23 @@
+environnement virtuel
+packages requirements.txt
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+update settings
+
+--------------
+python (environnement)
+
+folders
+
+add projet
+
+install dependences
+
+()
+
+python manage.py runserver
+
