@@ -80,7 +80,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "data/db.sqlite3",
     }
 }
 
@@ -143,4 +143,4 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com/", "https://*.nbesoro.com/"]

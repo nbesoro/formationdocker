@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+    web-myimgdjango:
+        image: "soro08/myimgdjango"
+        container_name: myimgdjango
+        command: python manage.py runserver 0.0.0.0:8000
+        environment:
+            - VIRTUAL_HOST=img.nbesoro.com
+            - LETSENCRYPT_HOST=img.nbesoro.com
+            - LETSENCRYPT_EMAIL=bonjour@nbesoro.com
+            - VIRTUAL_PORT=8000
+        expose:
+            - "8000"
+        # ports:
+        #     - "8000:8000"
+        volumes:
+            - staticfiles:/code/staticfiles
+            - ./mediafiles:/code/mediafiles
+            - ./db:/code/data
+        restart: always
+        networks:
+            - "net"
+
+networks:
+    net:
+        external: true
+volumes:
+    staticfiles:
